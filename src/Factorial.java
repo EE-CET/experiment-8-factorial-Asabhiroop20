@@ -1,11 +1,27 @@
+ import java.util.Scanner;
 public class Factorial {
+     public static long factorial(int n) {
+        long fact = 1;
 
-    // TODO: Create a method 'public static long factorial(int n)'
-    // It should return the factorial of n.
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
 
-    
-        // TODO: Read input n
-        // TODO: Call factorial(n)
-        // TODO: Print the result
-    
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+         int n = sc.nextInt();
+
+        if (n < 0) {
+            System.out.println("Factorial not defined for negative numbers");
+        } else {
+            long result = factorial(n);  // calling function
+            System.out.println( result);
+        }
+
+        sc.close();
+    }
 }
+
